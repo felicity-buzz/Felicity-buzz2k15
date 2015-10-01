@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Felicity Buzz 2k15</title>
+	</head>
+	<body>
+	{% if user.username %}
+		<p>{{ user.username }}</p>
+		<a href="/accounts/logout/">Logout</a>
+	{% else %}
+		<a href="/accounts/login/">Login</a>
+	{% endif %}
+
+	</body>
+</html>	
