@@ -39,7 +39,8 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'authentication',
     'home',
-    'password_reset'
+    'password_reset',
+    'tshirt_contest',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -102,4 +103,11 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
+MEDIA_ROOT = os.path.abspath(os.path.dirname(__file__)) + '/media/'
+MEDIA_URL = '/media/'
 STATIC_URL = '/static/'
+THUMBNAIL_ALIASES = {
+    '': {
+        'avatar': {'size': (400, 400), 'crop': True},
+    },
+}
