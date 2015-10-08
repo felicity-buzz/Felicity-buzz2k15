@@ -106,6 +106,7 @@ USE_TZ = True
 MEDIA_ROOT = os.path.abspath(os.path.dirname(__file__)) + '/media/'
 MEDIA_URL = '/media/'
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, "static/")
 THUMBNAIL_ALIASES = {
     '': {
         'avatar': {'size': (400, 400), 'crop': True},
