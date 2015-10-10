@@ -33,3 +33,5 @@ As it is better to serve static files with nginx, I made a bypass uwsgi system t
 Use /Felicity-buzz2k15/buzz2k15/ folder for django related work
 
 Site link -> felicity.iiit.ac.in/buzz/ (accessible only through intranet)
+
+If you  provide any link  use /buzz/portal/ as prefix
