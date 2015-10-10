@@ -27,4 +27,9 @@ Various web apps for various events which will take place during felicity buzz2k
 
 1. deactivate
 
+##Important##
+As it is better to serve static files with nginx, I made a bypass uwsgi system to server static pages like home,events,scedule page so please use /Felicity-buzz2k15/staticpages/ for this type of pages.
 
+Use /Felicity-buzz2k15/buzz2k15/ folder for django related work
+
+Site link -> felicity.iiit.ac.in/buzz/ (accessible only through intranet)
