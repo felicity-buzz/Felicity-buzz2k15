@@ -1,0 +1,16 @@
+<p> {{user.username}} </p>
+
+{% if message %}
+	<p> {{message}}</p>
+{% endif %}
+
+<h3> Level : {{my_ques.level}}</h3>
+<p> {{my_ques.sequence_number}}) {{my_ques.question_text}} </p>
+
+<form action = '/buzz/portal/gordian-knot/ques/{{my_ques.id}}/' method = 'post'>
+{% csrf_token %}
+	{{form}}
+	<input type="submit" value="Submit" />
+</form>
+
+<p> <a href = "{% url 'ques' 2 %}"> NEXT </a></p>
