@@ -2,7 +2,6 @@
 from __future__ import unicode_literals
 
 from django.db import models, migrations
-import django.utils.timezone
 from django.conf import settings
 
 
@@ -14,32 +13,22 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='Answer',
+            name='Profile',
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
-                ('answer', models.IntegerField()),
-                ('time_submitted', models.DateTimeField(default=django.utils.timezone.now, verbose_name=b'time submitted')),
-                ('correct', models.BooleanField(default=0)),
+                ('score', models.IntegerField(default=0)),
+                ('tries', models.IntegerField(default=0)),
+                ('level', models.IntegerField()),
+                ('user', models.OneToOneField(to=settings.AUTH_USER_MODEL)),
             ],
         ),
         migrations.CreateModel(
             name='Question',
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
+                ('level', models.IntegerField(default=0, choices=[(1, 1), (2, 2), (3, 3), (4, 4), (5, 5), (6, 6), (7, 7), (8, 8), (9, 9), (10, 10), (11, 11), (12, 12), (13, 13), (14, 14), (15, 15), (16, 16), (17, 17), (18, 18), (19, 19), (20, 20)])),
                 ('question_text', models.TextField(max_length=1000, verbose_name=b'Question')),
-                ('level', models.IntegerField(default=1, choices=[(1, 1), (2, 2), (3, 3), (4, 4)])),
-                ('correct_answer', models.IntegerField()),
-                ('sequence_number', models.IntegerField()),
+                ('correct_answer', models.CharField(max_length=100)),
             ],
-        ),
-        migrations.AddField(
-            model_name='answer',
-            name='question',
-            field=models.ForeignKey(to='gordian_knot.Question'),
-        ),
-        migrations.AddField(
-            model_name='answer',
-            name='user',
-            field=models.ForeignKey(to=settings.AUTH_USER_MODEL),
         ),
     ]

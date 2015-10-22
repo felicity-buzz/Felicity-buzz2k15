@@ -1,16 +1,14 @@
 <p> {{user.username}} </p>
-
-{% if message %}
+<!--{% if message %}
 	<p> {{message}}</p>
-{% endif %}
+{% endif %} -->
 
-<h3> Level : {{my_ques.level}}</h3>
-<p> {{my_ques.sequence_number}}) {{my_ques.question_text}} </p>
+<h3> Level : {{ my_ques.level }}</h3>
+<p> {{my_ques.question_text}} </p>
 
 <form action = '/buzz/portal/gordian-knot/ques/{{my_ques.id}}/' method = 'post'>
 {% csrf_token %}
-	{{form}}
+	<input type="text" placeholder="Answer" name="answer" id="answer"/>
 	<input type="submit" value="Submit" />
 </form>
 
-<p> <a href = "{% url 'ques' 2 %}"> NEXT </a></p>
