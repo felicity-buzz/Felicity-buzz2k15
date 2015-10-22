@@ -18,6 +18,10 @@ class Answer(models.Model):
 	answer = models.IntegerField()
 	time_submitted = models.DateTimeField('time submitted', default = timezone.now)
 	correct = models.BooleanField(default = 0)
+	
+class Score(models.Model):
+	user = models.ForeignKey(User, unique = True)
+	score = models.IntegerField(default = 0)
 
 class AnswerForm(ModelForm):
 	class Meta:
