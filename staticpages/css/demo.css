@@ -1,0 +1,120 @@
+body {
+    background-image: url('back.jpg'); 
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-size: 25px;
+    line-height: 31px;
+    color: rgb(73, 72, 100);
+}
+::selection {
+    background: #ff455f;
+    color: #fff;
+}
+::-moz-selection {
+    background: #ff455f;
+    color: #fff;
+}
+a:hover {
+    color: rgb(78, 127, 255);
+}
+.scrollContainer {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    min-width: 650px;
+    width: 100%
+}
+.scrollContent {
+    position: relative;
+    /*height: 100%;*/
+}
+section {
+    height: 100vh;
+    position: relative;
+    z-index: 8888;
+}
+section#start {
+
+}
+h1 {
+    color: #fff;
+}
+
+.spark {
+    position: absolute;
+}
+.spark.s0 {
+    background-image: url("../img/demo_spark1.png");
+    width: 4px;
+    height: 3px;
+}
+.spark.s1 {
+    background-image: url("../img/demo_spark2.png");
+    width: 6px;
+    height: 6px;
+}
+.spark.s2 {
+    background-image: url("../img/demo_spark3.png");
+    width: 8px;
+    height: 8px;
+}
+.spark.s3 {
+    background-image: url("../img/demo_spark4.png");
+    width: 11px;
+    height: 11px;
+}
+.spark.s4 {
+    background-image: url("../img/demo_spark5.png");
+    width: 13px;
+    height: 13px;
+}
+.spark.s5 {
+    background-image: url("../img/demo_spark6.png");
+    width: 17px;
+    height: 17px;
+}
+.wand {
+    position: absolute;
+}
+.sparkpoint {
+    position: absolute;
+}
+#intro {
+    display: block;
+    width: 650px;
+    height: 400px;
+    top: 45%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -60%);
+    -moz-transform: translate(-50%, -60%);
+    transform: translate(-50%, -60%);
+    position: absolute;
+}
+#intro h1 {
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    top: 135px;
+    margin: 0;
+}
+#intro h1 span {
+    position: relative;
+}
+#intro .tophat {
+    position: absolute;
+    bottom: 110px;
+    left: 50%;
+    margin-left: -144px;
+    margin-bottom: 50px;
+}
+#intro .sparkpoint {
+    top: 60px;
+    left: 380px;
+}
+.title{
+    font-family: 'Raleway', Calibri, Arial, sans-serif;
+    text-transform: uppercase;
+    font-size: 3em;
+    letter-spacing: 0.1em;
+    font-weight: 200;
+}
