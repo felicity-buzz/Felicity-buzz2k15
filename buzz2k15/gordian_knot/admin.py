@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 # Register your models here.
-from gordian_knot.models import Question, Answer
+from gordian_knot.models import Question, Answer, Score
 from django.contrib.auth.models import User
 
 class QuestionAdmin(admin.ModelAdmin):
@@ -14,3 +14,4 @@ class AnswerAdmin(admin.ModelAdmin):
 
 admin.site.register(Question, QuestionAdmin)
 admin.site.register(Answer, AnswerAdmin)
+admin.site.register(Score)
