@@ -12,6 +12,9 @@ class AnswerAdmin(admin.ModelAdmin):
 	list_display = ('question', 'answer', 'user', 'correct')
 	list_filter = ['question', 'correct', 'user']
 
+class ScoreAdmin(admin.ModelAdmin):
+	list_display = ('user', 'score')
+
 admin.site.register(Question, QuestionAdmin)
 admin.site.register(Answer, AnswerAdmin)
-admin.site.register(Score)
+admin.site.register(Score, ScoreAdmin)

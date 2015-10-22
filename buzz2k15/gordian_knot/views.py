@@ -24,6 +24,7 @@ def ques(request, ques_num):
 				message = 'Congrats, your answer is correct.'
 				my_user = Score.objects.filter(user = request.user)
 				if my_user:
+					my_user = my_user[0]
 					my_user.score += 10
 					my_user.save()
 				else:
