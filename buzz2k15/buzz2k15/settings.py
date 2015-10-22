@@ -40,6 +40,7 @@ INSTALLED_APPS = (
     'authentication',
     'password_reset',
     'tshirt_contest',
+    'gordian_knot',
 )
 
 MIDDLEWARE_CLASSES = (
