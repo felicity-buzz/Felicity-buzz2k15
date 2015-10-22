@@ -1,3 +1,8 @@
+@font-face {
+    font-family: buzz-font;
+    src: url(../fonts/Raleway.ttf);
+}
+
 body {
     background-image: url('back.jpg'); 
     background-size: 100%;
@@ -112,7 +117,7 @@ h1 {
     left: 380px;
 }
 .title{
-    font-family: 'Raleway', Calibri, Arial, sans-serif;
+    font-family: buzz-font;
     text-transform: uppercase;
     font-size: 3em;
     letter-spacing: 0.1em;
