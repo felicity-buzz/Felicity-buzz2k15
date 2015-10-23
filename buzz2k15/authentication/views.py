@@ -24,7 +24,7 @@ def login(request):
 				auth.login(request,user)
 				return HttpResponseRedirect('/')
 			else:
-				return HttpResponseRedirect('/accounts/invalid/')
+				return HttpResponseRedirect('/buzz/portal/accounts/invalid/')
 		else:
 			c={}
 			c.update(csrf(request))

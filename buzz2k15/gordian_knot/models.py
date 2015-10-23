@@ -10,6 +10,7 @@ class Question(models.Model):
 	correct_answer = models.CharField(max_length = 100)
 	def __unicode__(self):
 		return unicode(self.level)
+
 class Profile(models.Model):
 	user = models.OneToOneField(User)
 	score = models.IntegerField(default = 0)

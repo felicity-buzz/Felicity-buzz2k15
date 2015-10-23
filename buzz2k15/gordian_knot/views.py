@@ -49,6 +49,6 @@ def ques(request, ques_num):
 			return render_to_response('gordian_knot/ques.html',keys)
 	else:
 		return HttpResponse("Better Luck next time Bro!")
-#def leaderboard(request):
-#	user_list = Score.objects.all().order_by('score')[::-1]
-#	return render(request, 'gordian_knot/leader.html', {'user_list' : user_list})
+def leaderboard(request):
+	user_list = Profile.objects.all().order_by('score')[::-1]
+	return render(request, 'gordian_knot/leader.html', {'user_list' : user_list})
