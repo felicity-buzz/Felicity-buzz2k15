@@ -1,0 +1,254 @@
+<!doctype html>
+<html><!--<![endif]-->
+<head>
+
+    <meta charset="utf-8">
+
+    <title>Felcity Buzz 2k15</title>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="img/apple-touch-icon-precomposed.png">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic|Roboto+Condensed:400,300,700">
+    <link href='https://fonts.googleapis.com/css?family=Flamenco' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Raleway:200,400,800' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/component.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/demo.css">
+    <link rel="stylesheet" href="css/menu.css">
+    <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.3.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="fonts/vicons/vicons-font.css" />
+    <script src="js/lib/jquery.min.js"></script>
+    <script src='js/jquery.transit.js'></script>
+    <style media="screen">
+      .title{
+        -moz-animation-name: dropHeader;
+        -moz-animation-iteration-count: 1;
+        -moz-animation-timing-function: ease-in;
+        -moz-animation-duration: 1s;
+
+        -webkit-animation-name: dropHeader;
+        -webkit-animation-iteration-count: 1;
+        -webkit-animation-timing-function: ease-in;
+        -webkit-animation-duration: 1s;
+
+        animation-name: dropHeader;
+        animation-iteration-count: 1;
+        animation-timing-function: ease-in;
+        animation-duration: 1s;
+      }
+
+      @-moz-keyframes dropHeader {
+          0% {
+          }
+          100% {
+              -moz-transform: translateY(-500px);
+          }
+      }
+      @-webkit-keyframes dropHeader {
+          0% {
+          }
+          100% {
+              -webkit-transform: translateY(-500px);
+          }
+      }
+      @keyframes dropHeader {
+          0% {
+          }
+          100% {
+              transform: translateY(-500px);
+          }
+      }
+      .cal-table
+      {
+        text-align: center;
+        border-collapse: separate;
+        border-spacing: 6px;
+        color:white;
+        font-family: 'Open sans', sans-serif;
+        font-size: 16px;
+        margin-bottom: 0px;
+        margin-left: 0px;
+        margin-right: 0px;
+        margin-top: 0px;
+        overflow-y: scroll
+      }
+      .cal-month-name
+      {
+        text-align: right;
+      }
+      .cal-week td{
+        border-bottom-color: rgb(37, 107, 90);
+        border-bottom-left-radius: 500px;
+        border-bottom-right-radius: 500px;
+        border-bottom-style: solid;
+        border-bottom-width: 3px;
+        border-collapse: separate;
+        border-image-outset: 0px;
+        border-image-repeat: stretch;
+        border-image-slice: 100%;
+        border-image-source: none;
+        border-image-width: 1;
+        border-left-color: rgb(37, 107, 90);
+        border-left-style: solid;
+        border-left-width: 3px;
+        border-right-color: rgb(37, 107, 90);
+        border-right-style: solid;
+        border-right-width: 3px;
+        border-top-color: rgb(37, 107, 90);
+        border-top-left-radius: 500px;
+        border-top-right-radius: 500px;
+        border-top-style: solid;
+        border-top-width: 3px;
+        box-sizing: border-box;
+        color: rgb(255, 255, 255);
+        cursor: default;
+        display: table-cell;
+        font-family: 'Open sans', sans-serif;
+        font-size: 16px;
+        height: 40px;
+        margin-bottom: 0px;
+        margin-left: 0px;
+        margin-right: 0px;
+        margin-top: 0px;
+        text-align: center;
+        vertical-align: middle;
+        width: 40px;
+      }
+      .has-event{
+        background-color: rgb(43, 199, 161);
+      }
+    </style>
+</head>
+<body onload="load()">
+  <div style="height: 0; width: 0; position: absolute; visibility: hidden;" aria-hidden="true">
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" focusable="false">
+        <symbol id="ripply-scott" viewBox="0 0 100 100">
+            <circle id="ripple-shape" cx="1" cy="1" r="1" />
+        </symbol>
+    </svg>
+</div>
+
+
+    <div id="content-wrapper" class="container">
+        <span id="overlay"></span>
+
+<!--
+        <section id="start">
+            <div id="intro">
+                <h1 class="title">Felicity Buzz</h1>
+            </div>
+        </section>
+      -->
+        <div>
+          <div class="content">
+    <!-- button component -->
+    <!-- /end button component -->
+</div>
+
+            <table class="cal-table">
+              <thead>
+                <tr>
+                  <th class="cal-month-name" colspan="7">February 2015</th>
+                </tr>
+
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Sun</td>
+                  <td>Mon</td>
+                  <td>Tue</td>
+                  <td>Wed</td>
+                  <td>Thu</td>
+                  <td>Fri</td>
+                  <td>Sat</td>
+                </tr>
+                <tr class="cal-week">
+                  <td  id="js-ripple-btn" class="button styl-material has-event" >1
+                    <svg class="ripple-obj" id="js-ripple">
+                              <use xlink:href="#ripply-scott" class="js-ripple"></use>
+                          </svg>
+                  </td>
+                  <td>2</td>
+                  <td>3</td>
+                  <td>4</td>
+                  <td>5</td>
+                  <td>6</td>
+                  <td>7</td>
+                </tr>
+                <tr class="cal-week">
+                  <td>8</td>
+                  <td>9</td>
+                  <td>10</td>
+                  <td>11</td>
+                  <td>12</td>
+                  <td>13</td>
+                  <td>14</td>
+                </tr>
+                <tr class="cal-week">
+                  <td>15</td>
+                  <td>16</td>
+                  <td>17</td>
+                  <td>18</td>
+                  <td>19</td>
+                  <td>20</td>
+                  <td>21</td>
+                </tr>
+                <tr class="cal-week">
+                  <td>22</td>
+                  <td>23</td>
+                  <td>24</td>
+                  <td>25</td>
+                  <td>26</td>
+                  <td>27</td>
+                  <td>28</td>
+                </tr>
+                <tr class="cal-week">
+                  <td>29</td>
+                  <td>30</td>
+                </tr>
+        </div>
+
+        <div id="show">
+
+        </div>
+
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/TweenMax.min.js"></script>
+
+    <script src="js/ripple-config.js">
+    </script>
+
+    <script type="text/javascript">
+        var data=[
+          {
+            date:"1",
+            info:"absd",
+          },
+        ];
+
+        function load(){
+            var i,tds = $("td");
+            for(i=0;i<tds.length;i++){
+              var td = tds[i];
+              var j;
+              for(j=0;j<data.length;j++){
+                if(td.innerHTML == data[j]["date"]){
+                  td.className = "has-event";
+                  //td.setAttribute("id",td.innerHTML);
+                  //ripplyScott.init(td.id, 0.75);
+                  td.addEventListener("click", function(){
+                  });
+                }
+              }
+            }
+        }
+    </script>
+
+</body>
+</html>
