@@ -107,8 +107,3 @@ MEDIA_ROOT = os.path.abspath(os.path.dirname(__file__)) + '/media/'
 MEDIA_URL = '/buzz/portal/media/'
 STATIC_URL = '/buzz/portal/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, "static/")
-THUMBNAIL_ALIASES = {
-    '': {
-        'avatar': {'size': (400, 400), 'crop': True},
-    },
-}

@@ -46,7 +46,7 @@ def register(request):
 		    form = UserCreationForm(request.POST)
 		    if form.is_valid():
 		        user = form.save()
-		        return HttpResponseRedirect('/accounts/login/')
+		        return HttpResponseRedirect('/buzz/portal/accounts/login/')
 		else:
 		    form = UserCreationForm()
 
