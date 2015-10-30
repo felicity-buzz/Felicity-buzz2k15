@@ -54,7 +54,7 @@ def register(request):
 		    'form': form,
 		},context_instance=RequestContext(request))
 
-@login_required
+@login_required(login_url='/buzz/portal/accounts/login/')
 def logout(request):
 	auth.logout(request)
 	return redirect('authentication.views.login')
