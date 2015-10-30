@@ -8,4 +8,8 @@ urlpatterns = patterns('',
     url(r'^buzz/portal/password_reset/', include('password_reset.urls')),
     url(r'^buzz/portal/tshirt-contest/', include('tshirt_contest.urls')),
     url(r'^buzz/portal/gordian-knot/', include('gordian_knot.urls')),
+    url(r'^buzz/portal/cache-in/', include('cache_in.urls')),
   ) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+
+#urlpatterns += staticfiles_urlpatterns()

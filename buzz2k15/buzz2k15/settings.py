@@ -41,6 +41,7 @@ INSTALLED_APPS = (
     'password_reset',
     'tshirt_contest',
     'gordian_knot',
+    'cache_in',
 )
 
 MIDDLEWARE_CLASSES = (
