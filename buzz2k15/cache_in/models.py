@@ -16,6 +16,7 @@ class Profile(models.Model):
 	score=models.IntegerField(default=0)
 	question_number=models.IntegerField(default=0)
 	time_completed=models.DateTimeField(default=timezone.now)
+	solved = models.CharField(max_length = 300, default = '0,', blank = True)
 	
 	
 	

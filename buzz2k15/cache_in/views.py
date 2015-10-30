@@ -23,7 +23,15 @@ def getstarted(request):
 
 @login_required(login_url='/buzz/portal/accounts/login/')
 def ques(request, ques_num):
+	print len(Question.objects.all())
+	if int(ques_num) > len(Question.objects.all()):
+		return HttpResponse("question doesn't exist.")
 	question = Question.objects.get(q_num = ques_num)
+	my_user = Profile.objects.get(user = request.user)
+	solved_list = my_user.solved.split(',')[0:-1]
+	if str(ques_num) in solved_list or int(ques_num) - my_user.question_number > 2:
+		return HttpResponseRedirect ('/buzz/portal/cache-in/ques/'+ str(my_user.question_number + 1) + '/')
+	#	return HttpResponse('not eligible to solve this.')
 	if request.method == 'POST':
 		form = AnswerForm(request.POST)
 		if form.is_valid():
@@ -31,13 +39,18 @@ def ques(request, ques_num):
 			flag = 0
 			answer_list = question.answer.split(',')
 			if obj in answer_list:
-				my_user = Profile.objects.get(user = request.user)
 				my_user.score += 100
-				my_user.question_number = ques_num
+				if int(ques_num) > my_user.question_number:
+					my_user.question_number = ques_num
 				my_user.time_completed = timezone.now()
+				my_user.solved += str(ques_num) + ','
 				my_user.save()
 				message = 'your answer is correct.'
-				return HttpResponseRedirect('/buzz/portal/cache-in/ques/'+ str(int(ques_num) + 1) + '/')
+				if int(ques_num) + 1 <= Question.objects.all().count():
+					return HttpResponseRedirect('/buzz/portal/cache-in/ques/'+ str(int(ques_num) + 1) + '/')
+				else:
+					return HttpResponse('there are no further questions.')
+	#			return HttpResponseRedirect('/buzz/portal/cache-in/ques/'+ str(int(ques_num) + 1) + '/')
 			else:
 				message = 'incorrect answer.'
 				return HttpResponseRedirect('/buzz/portal/cache-in/ques/'+ str(ques_num) + '/')
