@@ -1,10 +1,15 @@
-<p>{{user.username}}</p>
+{% load staticfiles %}
 
+<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}" />
+
+<p>{{user.username}}</p>
+<div class="grow">
 <p>hello</p>
 {% for image in images_list %}
 	<img src = "{{image.url}}" alt = 'no image.' width = '100px' height = '100px'></img>
 	<br><br><br>
 {% endfor %}
+</div>
 
 <form action = '/buzz/portal/cache-in/ques/{{question.q_num}}/' method = 'post'>
 {% csrf_token %}

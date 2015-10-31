@@ -42,6 +42,7 @@ INSTALLED_APPS = (
     'tshirt_contest',
     'gordian_knot',
     'cache_in',
+    'sytycc',
 )
 
 MIDDLEWARE_CLASSES = (
