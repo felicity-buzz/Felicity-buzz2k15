@@ -5,6 +5,7 @@
 	src: url('../fonts/codropsicons/codropsicons.eot');
 	src: url('../fonts/codropsicons/codropsicons.eot?#iefix') format('embedded-opentype'), url('../fonts/codropsicons/codropsicons.woff') format('woff'), url('../fonts/codropsicons/codropsicons.ttf') format('truetype'), url('../fonts/codropsicons/codropsicons.svg#codropsicons') format('svg');
 }
+
 @font-face {
 	font-family: buzz-font;
 	src: url(../fonts/Raleway.ttf);
@@ -25,13 +26,16 @@
 .clearfix:after {
 	clear: both;
 }
-
 body {
 	font-family: 'buzz-font';
 	line-height: 1.5;
 	color: rgb(255, 255, 255);
 	background-image: url('../img/back.jpg');
+	background-position   : center center;
+	background-size: 100% 100%;
 	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	overflow: hidden;
@@ -239,4 +243,31 @@ a:focus {
 		font-size: 2.4em;
 		line-height: 1.2;
 	}
+}
+.card__copy .description-heading{
+	font-weight: 600;
+	color:#de6551;
+	padding:0px;
+	font-size:1.7em;
+}
+.card__copy .description{
+	font-weight: 600;
+	font-size:1em;
+}
+.card__copy .event-link{
+	font-weight: 600;
+	font-size: 1.5em;
+}
+.card__copy .event-link:hover{
+	font-weight: 600;
+	font-size: 1.5em;
+	color:#de6551;
+}
+.card__copy .rules{
+	font-weight: 600;
+}
+.card__copy .rules_heading{
+	font-weight: 600;
+	font-size:1.7em;
+	color:#de6551;
 }
