@@ -1,19 +1,32 @@
+
+
+
 {% load staticfiles %}
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="{% static "cache_in/css/style1.css" %}" type="text/css" media="all">
 
-<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}" />
-
-<p>{{user.username}}</p>
-<div class="grow">
-<p>hello</p>
-{% for image in images_list %}
-	<img src = "{{image.url}}" alt = 'no image.' width = '100px' height = '100px'></img>
-	<br><br><br>
-{% endfor %}
+<div class="bounce">
+<p>{{user.username}}
+</p>
 </div>
 
+<p>hello</p>
+<div class="container">
+<ul>
+{% for image in images_list %}
+	<li><img src = "{{image.url}}" alt = 'no image.'></img></li>
+{% endfor %}
+</ul>
+</div>
+<br>
+<br>
+<div>
 <form action = '/buzz/portal/cache-in/ques/{{question.q_num}}/' method = 'post'>
 {% csrf_token %}
 {{form}}
 <input type = 'submit' value = 'submit'/>
 </form>
+</div>
 

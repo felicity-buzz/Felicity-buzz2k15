@@ -9,7 +9,6 @@ urlpatterns = patterns('',
     url(r'^buzz/portal/tshirt-contest/', include('tshirt_contest.urls')),
     url(r'^buzz/portal/gordian-knot/', include('gordian_knot.urls')),
     url(r'^buzz/portal/cache-in/', include('cache_in.urls')),
-    url(r'^buzz/portal/so-you-think/', include('sytycc.urls')),
   ) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 
