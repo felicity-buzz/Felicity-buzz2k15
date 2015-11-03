@@ -123,6 +123,12 @@
     .has-event{
       background-color: rgb(43, 199, 161);
     }
+    .nbutton{
+      color: black;
+      padding-left: 1200px;
+      background: transparent;
+      position: absolute;
+    }
   </style>
 </head>
 <body onload="load()">
@@ -173,12 +179,17 @@
             <td id="day3" class="temp" value="4">4</td>
             <td id="day4" class="temp" value="5">5</td>
           </tr>
-
-          <div id="show">
-
+          <div class="new">
           </div>
+        <!--  <div id="show">
 
+          </div>-->
+         </tbody>
+         <div class="nbutton">
+          <a href="javascript:removeShow()">Back</a>
+          </div>
         </div>
+         
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/TweenMax.min.js"></script>
 
         <script src="js/ripple-config.js">
@@ -235,6 +246,8 @@
             $( ".cal-week,.days" ).children("*").not(this).animate({
               opacity: 0
             }, 500);
+            var div = $('<div id="#show"></div>');
+            $("#tbody").append(div);
             $(this).animate({
               opacity:1,
               width:800,
@@ -259,15 +272,30 @@
             
 });
             function removeShow(){
-              $("#show").animate({opacity: 0});
-              $("#day2").animate({
+              $(".temp").click(function(){
+              x=parseInt($(this).attr('value'));
+            });
+              console.log(x);
+              //$("#show").animate({opacity: 0});
+              $("#show").remove()
+              $( ".cal-month-name" ).animate({
+              opacity: 1
+            }, 500);
+               $( ".cal-week,.days" ).children("*").not(this).animate({
+              opacity: 1
+            }, 500);
+               x=x-1
+               var b="#day"+x;
+               console.log(b)
+               x=x+1;
+              $(b).animate({
                 width: 40,
                 height: 40,
                 borderTopLeftRadius: 500, 
                 borderTopRightRadius: 500, 
                 borderBottomLeftRadius: 500, 
                 borderBottomRightRadius: 500
-              }, 1000).css({"position":"default" })
+              }, 500).css({"position":"","bottom":"","left":"" }).text(x);
             };
 
 </script>
