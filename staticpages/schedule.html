@@ -127,7 +127,6 @@
       color: black;
       padding-left: 1200px;
       background: transparent;
-      position: absolute;
     }
   </style>
 </head>
@@ -155,7 +154,10 @@
         <!-- button component -->
         <!-- /end button component -->
       </div>
-
+      <div class="try">
+       <div class="nbutton">
+          <a href="javascript:removeShow()">Back</a>
+          </div>
       <table class="cal-table">
         <thead>
           <tr>
@@ -179,16 +181,12 @@
             <td id="day3" class="temp" value="4">4</td>
             <td id="day4" class="temp" value="5">5</td>
           </tr>
-          <div class="new">
-          </div>
-        <!--  <div id="show">
+         </tbody>
+         </table>
+      <!--  <div id="show" style="bottom:30%;position:absolute">
 
           </div>-->
-         </tbody>
-         <div class="nbutton">
-          <a href="javascript:removeShow()">Back</a>
-          </div>
-        </div>
+         </div>
          
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/TweenMax.min.js"></script>
 
@@ -221,6 +219,8 @@
           }
           var x;
           $(".temp").click(function(){
+            var div = $('<div id="show" style="bottom:30%;position:absolute;"></div>');
+            $(".try").append(div);
             x=parseInt($(this).attr('value'));
             if(x == 2){
               a=[];
@@ -240,14 +240,12 @@
             }
 
            
-              $( ".cal-month-name" ).animate({
+            $( ".cal-month-name" ).animate({
               opacity: 0
             }, 1000);
             $( ".cal-week,.days" ).children("*").not(this).animate({
               opacity: 0
             }, 500);
-            var div = $('<div id="#show"></div>');
-            $("#tbody").append(div);
             $(this).animate({
               opacity:1,
               width:800,
@@ -269,6 +267,9 @@
                 })
               })
             }, 1110);
+            $("#show").animate({
+              opacity:1
+            },1050);
             
 });
             function removeShow(){
