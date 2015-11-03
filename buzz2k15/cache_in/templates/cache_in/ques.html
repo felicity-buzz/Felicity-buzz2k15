@@ -1,32 +1,29 @@
 
-
-
 {% load staticfiles %}
+
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="{% static "cache_in/css/style1.css" %}" type="text/css" media="all">
-
+<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine">
 <div class="bounce">
-<p>{{user.username}}
+<p class="welcome" style="color:orange;font-size:70px">Question {{question.q_num}}
 </p>
 </div>
-
-<p>hello</p>
-<div class="container">
-<ul>
 {% for image in images_list %}
-	<li><img src = "{{image.url}}" alt = 'no image.'></img></li>
+	<img width="400" height="400" class="img-thumbnail" src = "{{image.url}}" alt = 'no image.'></img>
+	<br>
+	<br>
 {% endfor %}
-</ul>
-</div>
-<br>
-<br>
-<div>
-<form action = '/buzz/portal/cache-in/ques/{{question.q_num}}/' method = 'post'>
+<form role="form" action = '/buzz/portal/cache-in/ques/{{question.q_num}}/' method = 'post'>
+<div class="form-group">
 {% csrf_token %}
 {{form}}
-<input type = 'submit' value = 'submit'/>
+<br>
+<div class="sub">
+<input type = 'submit' class="btn btn-warning"value = 'submit' id="s1"/>
+</div>
+</div>
 </form>
 </div>
 

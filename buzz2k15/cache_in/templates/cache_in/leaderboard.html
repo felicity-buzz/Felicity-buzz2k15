@@ -1,16 +1,31 @@
-<table border="2"> 
-	<tr>
-		<th>Name</th>
-		<th>Score</th> 
-	</tr>
-	{% if leaders %}
-		{% for us in leaders %}
+{% load staticfiles %}
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine">
+<link rel="stylesheet" href="{% static "cache_in/css/style.css" %}" type="text/css" media="all">
+<div class="container">
+	<h2>LEADERBOARD</h2>
+	<h3>Do you have what is takes?</h3>
+	<table class="table">
+		<thead>
 			<tr>
-				<td> {{us.user}} </td>
-				<td> {{us.score}} </td>
+			<th>USERNAME</th>
+			<th>SCORE</th>
 			</tr>
-		{% endfor %}
-	{% else %}
-		<p> no user has submitted any answer yet. </p>
-	{% endif %}
-</table>
+		</thead>
+		<tbody>
+		{% if leaders %}
+			{% for us in leaders %}
+			<tr class="success">
+				<td style="font-size:40px">{{us.user}}</td>
+				<td style="font-size:40px">{{us.score}}</td>
+			</tr>
+			{% endfor %}
+		{% endif %}
+		</tbody>
+	</table>
+</div>
+
+
+
