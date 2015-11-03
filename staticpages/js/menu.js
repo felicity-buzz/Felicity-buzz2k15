@@ -46,7 +46,7 @@ $(document).ready(function(){
 		});
 
 		on?openMenu():closeMenu();
-		
+
 	}
 	function openMenu(){
 		$(".menu-item").each(function(i){
@@ -121,7 +121,7 @@ $(document).ready(function(){
 					})
 				}
 			});
-			
+
 
 			TweenMax.to($(this).children(".menu-item-button"),0.3,{
 				delay:delay,
