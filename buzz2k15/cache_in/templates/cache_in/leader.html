@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+			<meta charset="UTF-8" />
+			<meta http-equiv="X-UA-Compatible" content="IE=edge">
+				<title>Felicity Buzz | Gordian Knot</title>
+				{% load staticfiles %}
+			<script src="https://code.jquery.com/jquery-2.1.4.min.js"> </script>
+			<script src="https://cdn.rawgit.com/nnattawat/flip/v1.0.16/dist/jquery.flip.min.js"> </script>
+			<link rel="stylesheet" type="text/css" href="{% static "gordian_knot/css/normalise.css" %}" />
+			<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"/>
+			<link rel="stylesheet" type="text/css" href="{% static "gordian_knot/css/gordian_knot.css" %}" />
+			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+	</head>
+
+
+	<body>
+		<div id="head">
+	   <img src="{% static "cache_in/img/cachein.jpg" %}" alt="math" style="width:100%;height:auto;"/>
+
+		</div>
+		<div id="title">
+			<h1>Cache In</h1>
+		</div>
+		<div id="sub-title">
+			<h3>Better you think, better you find.</h3>
+			<br>
+		</div>
+		<h2 class="level"><strong>Leaderboard</strong></h2>
+		<h4><a href="/buzz/portal/cache-in/"><strong><i class="fa fa-arrow-left"></i> Home</strong></a></h4>
+		<br>
+		<div id="leaderboard">
+			<table border="2" style="width:100%">
+				<tr>
+					<th style="text-align:center;">Name</th>
+					<th style="text-align:center;">Score</th>
+				</tr>
+				{% if user_list %}
+					{% for us in leaders %}
+						<tr>
+							<td style="font-weight:600"> {{us.user}} </td>
+							<td style="font-weight:600"> {{us.score}} </td>
+						</tr>
+					{% endfor %}
+				{% else %}
+					<p> no user has submitted any answer yet. </p>
+				{% endif %}
+			</table>
+		</div>
+		<br>
+		<br>
+		<br>
+		<p class="level"><strong>For any error in website contact anshul . singhal@students.iiit.ac.in</strong></p>
+</body>
+</html>

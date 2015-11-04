@@ -1,0 +1,43 @@
+@font-face {
+    font-family: buzz-font;
+    src: url(../fonts/Raleway.ttf);
+}
+body{
+  font-family:'buzz-font';
+  width:100%;
+  height:auto;
+  
+
+}
+#title{
+  font-family:'buzz-font';
+}
+.first{
+  padding-left: 25%;
+  font-size:1.3em;
+  font-weight: 600;
+}
+.second{
+  font-size: 1.3em;
+  font-weight: 600;
+  padding-bottom:1.2em;
+}
+.level{
+  color:#de6551;
+  text-decoration:none;
+}
+.level:hover{
+  text-decoration:none;
+}
+#sec{
+  width:100%;
+  padding-left:2%;
+  padding-right:2%;
+}
+#leaderboard{
+  margin-left: 19%;
+  margin-right: 19%;
+}
+#leaderboard td,th{
+  padding:10px;
+}

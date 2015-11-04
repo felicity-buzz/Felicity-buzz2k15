@@ -22,7 +22,7 @@ def login(request):
 			user=auth.authenticate(username=username,password=password)
 			if user is not None:
 				auth.login(request,user)
-				return HttpResponseRedirect('/')
+				return HttpResponseRedirect('/buzz/events.html')
 			else:
 				return HttpResponseRedirect('/buzz/portal/accounts/invalid/')
 		else:
@@ -45,8 +45,15 @@ def register(request):
 		if request.method =='POST':
 		    form = UserCreationForm(request.POST)
 		    if form.is_valid():
-		        user = form.save()
-		        return HttpResponseRedirect('/buzz/portal/accounts/login/')
+				print form
+				var = form.save()
+				username=request.POST.get('username','')
+				password=request.POST.get('password1','')
+				print username
+				user=auth.authenticate(username=username,password=password)
+				if user is not None:
+					auth.login(request,user)
+					return HttpResponseRedirect('/buzz/events.html')
 		else:
 		    form = UserCreationForm()
 

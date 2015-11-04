@@ -23,11 +23,7 @@
   		window.location.href = website;
   }
 	</script>
-	<script type="text/javascript">
-		document.getElementById("myButton").onclick = function () {
-			location.href = "/buzz/portal/gordian-knot/getstarted/";
-		};
-	</script>
+
 	<body>
 		<div id="head">
 	   <img src="{% static "gordian_knot/img/math.jpg" %}" alt="math" style="width:100%;height:auto;"/>
@@ -69,56 +65,28 @@
 								</div>
 							</div>
 					</div>
- <!--				<tr style="text-align:center;">
-							<td style="width:35%;" class="first"><a class="level" href="/buzz/portal/gordian-knot/ques/2">Level 2</a></td>
-							<td class="second"><a class="level" href="/buzz/portal/gordian-knot/ques/12">Level 12</a></td>
-						</tr>
-						<tr style="text-align:center;">
-							<td style="width:35%;" class="first"><a class="level" href="/buzz/portal/gordian-knot/ques/3">Level 3</a></td>
-							<td class="second"><a class="level" href="/buzz/portal/gordian-knot/ques/13">Level 13</a></td>
-						</tr>
-						<tr style="text-align:center;">
-							<td style="width:35%;" class="first"><a class="level" href="/buzz/portal/gordian-knot/ques/4">Level 4</a></td>
-							<td class="second"><a class="level" href="/buzz/portal/gordian-knot/ques/14">Level 14</a></td>
-						</tr>
-						<tr style="text-align:center;">
-							<td style="width:35%;" class="first"><a class="level" href="/buzz/portal/gordian-knot/ques/5">Level 5</a></td>
-							<td class="second"><a class="level" href="/buzz/portal/gordian-knot/ques/15">Level 15</a></td>
-						</tr>
-						<tr style="text-align:center;">
-							<td style="width:35%;" class="first"><a class="level" href="/buzz/portal/gordian-knot/ques/6">Level 6</a></td>
-							<td class="second"><a class="level" href="/buzz/portal/gordian-knot/ques/16">Level 16</a></td>
-						</tr>
-						<tr style="text-align:center;">
-							<td style="width:35%;" class="first"><a class="level" href="/buzz/portal/gordian-knot/ques/7">Level 7</a></td>
-							<td class="second"><a class="level" href="/buzz/portal/gordian-knot/ques/17">Level 17</a></td>
-						</tr>
-						<tr style="text-align:center;">
-							<td style="width:35%;" class="first"><a class="level" href="/buzz/portal/gordian-knot/ques/8">Level 8</a></td>
-							<td class="second"><a class="level" href="/buzz/portal/gordian-knot/ques/18">Level 18</a></td>
-						</tr>
-						<tr style="text-align:center;">
-							<td style="width:35%;" class="first"><a class="level" href="/buzz/portal/gordian-knot/ques/9">Level 9</a></td>
-							<td class="second"><a class="level" href="/buzz/portal/gordian-knot/ques/19">Level 19</a></td>
-						</tr>
-						<tr style="text-align:center;">
-							<td style="width:35%;" class="first"><a class="level" href="/buzz/portal/gordian-knot/ques/10">Level 10</a></td>
-							<td class="second"><a class="level" href="/buzz/portal/gordian-knot/ques/20">Level 20</a></td>
-						</tr> -->
-					</table>
 
 			{% else %}
-					<button onclick="location.href = '/buzz/portal/gordian-knot/getstarted/';" type="button" class="btn btn-primary btn-lg">Get Started</button>
-			{% endif %}
+<!--		<button id="myButton" type="button" class="btn btn-primary btn-lg">Get Started</button>
+-->   <a class="level" style="font-size:1.3em" href="/buzz/portal/gordian-knot/getstarted/"><strong>Get started</strong></a>
+
+				{% endif %}
 		{% else %}
 			<h2>To Start <a class="level" href="/buzz/portal/accounts/login">Login</a> First </h2>
 		{% endif %}
 		<br><br>
-		<button onclick="location.href = '/buzz/portal/gordian-knot/leaderboard/';" type="button" class="btn btn-primary btn-lg">Go to Leaderboard</button>
-		<br>
+	<!--	<button onclick="location.href = '/buzz/portal/gordian-knot/leaderboard/';" type="button" class="btn btn-primary btn-lg">Go to Leaderboard</button>
+	-->
+		<a class="level" style="font-size:1.3em" href="/buzz/portal/gordian-knot/leaderboard/"><strong>Go to Leaderboard</strong></a>
+	<br>
 		<br>
 		<br>
 		<p class="level"><strong>For any error in website contact anshul . singhal@students.iiit.ac.in</strong></p>
-
+		<script type="text/javascript">
+			document.getElementById("myButton").onclick = function () {
+				location.href = "/buzz/portal/gordian-knot/getstarted/";
+				console.log(location.href);
+			};
+		</script>
 	</body>
 </html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+	<head>
+			<meta charset="UTF-8" />
+			<meta http-equiv="X-UA-Compatible" content="IE=edge">
+				<title>Felicity Buzz | Cache In</title>
+				{% load staticfiles %}
+			<script src="https://code.jquery.com/jquery-2.1.4.min.js"> </script>
+			<script src="https://cdn.rawgit.com/nnattawat/flip/v1.0.16/dist/jquery.flip.min.js"> </script>
+			<link rel="stylesheet" type="text/css" href="{% static "gordian_knot/css/normalise.css" %}" />
+			<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"/>
+			<link rel="stylesheet" type="text/css" href="{% static "gordian_knot/css/gordian_knot.css" %}" />
+			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+	</head>
+	<script>
+	function chutiyapa() {
+	    alert("Buddy! You are not eligible for this level!");
+	}
+	</script>
+	<script>
+
+	function openurl(website){
+  		window.location.href = website;
+  }
+	</script>
+
+	<body>
+		<div id="head">
+	   <img src="{% static "cache_in/img/cachein.jpg" %}" alt="math" style="width:100%;height:auto;"/>
+
+		</div>
+		<div id="title">
+			<h1>CacheIn</h1>
+		</div>
+		<div id="sub-title">
+			{% if user.username %}
+			<h3>Better you think, better you find.<span  style="padding-left:40%"><a class="level" href="https://felicity.iiit.ac.in/buzz/">Home</a></span><span  style="padding-left:10%"><a class="level" href="/buzz/portal/accounts/logout/">Logout</span></h3>
+			{% else %}
+			<h3 class="level">Better you think, better you find.</h3>
+			{% endif %}
+			<br>
+			<h4 style="padding-left:35%"></h4>
+		</div>
+		{% if user.username %}
+			{% if check == 1 %}
+					<div class="container">
+							<div class="row">
+								<div class="col-md-2 col-md-offset-3">
+										{% for i in range1 %}
+												{% if user.profile.level >= i %}
+													<a style="font-size:1.8em;" class="level" href="/buzz/portal/cache-in/ques/{{i}}">Level {{i}}</a><br>
+												{% else %}
+													<a style="font-size:1.8em;cursor:pointer;" class="level" onclick="chutiyapa()">Level {{i}}</a><br>
+												{% endif %}
+										{% endfor %}
+								</div>
+								<div class="col-md-2 col-md-offset-1">
+									{% for i in range2 %}
+										{% if user.profile.level >= i %}
+											<a style="font-size:1.8em;" class="level" href="/buzz/portal/cache-in/ques/{{i}}">Level {{i}}</a><br>
+										{% else %}
+											<a style="font-size:1.8em;cursor:pointer;" class="level" onclick="chutiyapa()">Level {{i}}</a><br>
+										{% endif %}
+									{% endfor %}
+								</div>
+							</div>
+					</div>
+
+			{% else %}
+<!--		<button id="myButton" type="button" class="btn btn-primary btn-lg">Get Started</button>
+-->   <a class="level" style="font-size:1.3em" href="/buzz/portal/cache-in/getstarted/"><strong>Get started</strong></a>
+
+				{% endif %}
+		{% else %}
+			<h2>To Start <a class="level" href="/buzz/portal/accounts/login">Login</a> First </h2>
+		{% endif %}
+		<br><br>
+	<!--	<button onclick="location.href = '/buzz/portal/cache-in/leaderboard/';" type="button" class="btn btn-primary btn-lg">Go to Leaderboard</button>
+	-->
+		<a class="level" style="font-size:1.3em" href="/buzz/portal/cache-in/leaderboard/"><strong>Go to Leaderboard</strong></a>
+	<br>
+		<br>
+		<br>
+		<p class="level"><strong>For any error in website contact anshul . singhal@students.iiit.ac.in</strong></p>
+		<script type="text/javascript">
+			document.getElementById("myButton").onclick = function () {
+				location.href = "/buzz/portal/cache-in/getstarted/";
+				console.log(location.href);
+			};
+		</script>
+	</body>
+</html>

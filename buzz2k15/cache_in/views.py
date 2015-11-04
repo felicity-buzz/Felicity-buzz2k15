@@ -11,19 +11,34 @@ from django.utils import timezone
 
 from .forms import AnswerForm
 def index(request):
-    return HttpResponse('hello')
+	check = 0
+	getstarted = Profile.objects.filter(user=request.user.id)
+	if len(getstarted) == 0:
+		check = 0
+	else:
+		check = 1
+	keys = { 'user':request.user,'check':check,'range1':range(1,11),'range2':range(11,16) }
+	return render(request, 'cache_in/index.html', keys)
 
 @login_required(login_url='/buzz/portal/accounts/login/')
 def getstarted(request):
 	if request.user.username:
-		profile = Profile(user = request.user, score = 0, question_number = 0)
-		profile.save()
-		return HttpResponseRedirect('/buzz/portal/cache-in/ques/1/')
-    
+		check = 0
+		getstarted = Profile.objects.filter(user=request.user.id)
+		if len(getstarted) == 0:
+			check = 0
+		else:
+			check = 1
+		if check == 0:
+			profile=Profile(user=request.user,score=0, question_number = 0)
+			profile.save()
+			return HttpResponseRedirect('/buzz/portal/cache-in/ques/1/')
+		else:
+			return HttpResponse("You have already started. Go back and do contest !")
 
 @login_required(login_url='/buzz/portal/accounts/login/')
 def ques(request, ques_num):
-	print len(Question.objects.all())
+
 	if int(ques_num) > len(Question.objects.all()):
 		return HttpResponse("question doesn't exist.")
 	question = Question.objects.get(q_num = ques_num)
@@ -54,25 +69,16 @@ def ques(request, ques_num):
 			else:
 				message = 'incorrect answer.'
 				return HttpResponseRedirect('/buzz/portal/cache-in/ques/'+ str(ques_num) + '/')
-				
-				
-	
+
+
+
 	ione = question.question_image1
-	itwo = question.question_image2
-	ithree = question.question_image3
-	ifour = question.question_image4
 	images_list = [ione]
-	if itwo:
-		images_list.append(itwo)
-	if ithree:
-		images_list.append(ithree)
-	if ifour:
-		images_list.append(ifour)
 	form = AnswerForm()
 	context = {'question' : question, 'images_list' : images_list, 'form' : form, 'user' : request.user}
-	return render(request, 'cache_in/ques.html', context)
+	return render(request, 'cache_in/question.html', context)
 
 def leaderboard(request):
     leaders = Profile.objects.all().order_by('-score','time_completed')
-    return render(request, 'cache_in/leaderboard.html', {'leaders' : leaders,'i':0})
+    return render(request, 'cache_in/leader.html', {'leaders' : leaders,'i':0})
 # Create your views here.
