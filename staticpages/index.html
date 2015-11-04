@@ -35,7 +35,16 @@
             window.scrollBy(0,50); // horizontal and vertical scroll increments
             scrolldelay = setTimeout('pageScroll()',200); // scrolls every 100 milliseconds
         }
+
     </script> -->
+    <script>
+        $(window).scroll(function() {
+        $('#abc').hide();
+            // do your special stuff here
+
+    });
+</script>
+
 </head>
 <body>
     <div id="content-wrapper">
@@ -145,7 +154,7 @@
                         </button>
                     </div>
                 </div>
-                <p style="color:white;text-align:center;">SCROLL TO START MAGIC<br><i style="font-size:1.3em" class="fa fa-arrow-circle-o-down"></i></p>
+                <p id="abc" style="color:white;text-align:center;">SCROLL TO START MAGIC<br><i style="font-size:1.3em" class="fa fa-arrow-circle-o-down"></i></p>
                 <script>
                 $('#toggle.buttons a.has-code').click(function() {
                     $('#get-it-now .item').removeClass('active');
