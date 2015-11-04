@@ -74,5 +74,5 @@ def ques(request, ques_num):
 
 def leaderboard(request):
     leaders = Profile.objects.all().order_by('-score','time_completed')
-    return render(request, 'cache_in/leaderboard.html', {'leaders' : leaders})
+    return render(request, 'cache_in/leaderboard.html', {'leaders' : leaders,'i':0})
 # Create your views here.
