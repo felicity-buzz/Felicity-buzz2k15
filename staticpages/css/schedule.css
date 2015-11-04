@@ -1,0 +1,112 @@
+.title{
+  -moz-animation-name: dropHeader;
+  -moz-animation-iteration-count: 1;
+  -moz-animation-timing-function: ease-in;
+  -moz-animation-duration: 1s;
+
+  -webkit-animation-name: dropHeader;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in;
+  -webkit-animation-duration: 1s;
+
+  animation-name: dropHeader;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+  animation-duration: 1s;
+}
+
+@-moz-keyframes dropHeader {
+  0% {
+  }
+  100% {
+    -moz-transform: translateY(-500px);
+  }
+}
+@-webkit-keyframes dropHeader {
+  0% {
+  }
+  100% {
+    -webkit-transform: translateY(-500px);
+  }
+}
+@keyframes dropHeader {
+  0% {
+  }
+  100% {
+    transform: translateY(-500px);
+  }
+}
+.cal-table
+{
+  text-align: center;
+  border-collapse: separate;
+  border-spacing: 6px;
+  color:white;
+  font-family: 'Open sans', sans-serif;
+  font-size: 16px;
+  margin-bottom: auto;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 230px;
+  overflow-y: scroll
+}
+.cal-month-name
+{
+  text-align: right;
+}
+.cal-week td{
+  border-bottom-color: rgb(37, 107, 90);
+  border-bottom-left-radius: 500px;
+  border-bottom-right-radius: 500px;
+  border-bottom-style: solid;
+  border-bottom-width: 3px;
+  border-collapse: separate;
+  border-image-outset: 0px;
+  border-image-repeat: stretch;
+  border-image-slice: 100%;
+  border-image-source: none;
+  border-image-width: 1;
+  border-left-color: rgb(37, 107, 90);
+  border-left-style: solid;
+  border-left-width: 3px;
+  border-right-color: rgb(37, 107, 90);
+  border-right-style: solid;
+  border-right-width: 3px;
+  border-top-color: rgb(37, 107, 90);
+  border-top-left-radius: 500px;
+  border-top-right-radius: 500px;
+  border-top-style: solid;
+  border-top-width: 3px;
+  box-sizing: border-box;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  display: table-cell;
+  font-family: 'Open sans', sans-serif;
+  font-size: 16px;
+  height: 40px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-top: 0px;
+  text-align: center;
+  vertical-align: middle;
+  width: 40px;
+}
+.has-event{
+  background-color: rgb(43, 199, 161);
+}
+.nbutton{
+  color: black;
+  padding-left: 1200px;
+  background: transparent;
+}
+body {
+    background-image: url('back.jpg');
+    background-position   : center center;
+    background-size: 100% 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-size: 25px;
+    line-height: 31px;
+    color: rgb(73, 72, 100);

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+	<head>
+			<meta charset="UTF-8" />
+			<meta http-equiv="X-UA-Compatible" content="IE=edge">
+				<title>Gordian Knot</title>
+				{% load staticfiles %}
+			<script src="https://code.jquery.com/jquery-2.1.4.min.js"> </script>
+			<script src="https://cdn.rawgit.com/nnattawat/flip/v1.0.16/dist/jquery.flip.min.js"> </script>
+			<link rel="stylesheet" type="text/css" href="{% static "gordian_knot/css/normalise.css" %}" />
+			<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"/>
+			<link rel="stylesheet" type="text/css" href="{% static "gordian_knot/css/gordian_knot.css" %}" />
+	</head>
+
+	<body>
+		<div id="head">
+	   <img src="{% static "gordian_knot/img/math.jpg" %}" alt="math" style="width:100%;height:auto;"/>
+		 <br><br>
+		</div>
+		<div id="title">
+			<h1><strong>Gordian Knot</strong></h1>
+		</div>
+		<div id="sub-title">
+			<h4>The Project Euler of Felicity</h4>
+		</div>
+		{% if user.profile.tries == 0 %}
+		<div id="card">
+			  <div class="front">
+
+				  <section id ="sec">
+	 			   	<img src="{% static "gordian_knot/img/1.jpg" %}" alt="Tarot Card" />
+					 	<br><br>
+						<br>
+						<br>
+						<br>
+						<p class="level"><strong>For any error in website contact anshul . singhal@students.iiit.ac.in</strong></p>
+					</section>
+			  </div>
+			  <div class="back">
+				  <section id="sec">
+				    <h2>Level {{ question_no }}</h2>
+						<h3><strong>{{ my_ques.question_text }}</strong></h3>
+						<br>
+						<form action = '/buzz/portal/gordian-knot/ques/{{my_ques.id}}/' class="form-horizontal" method = 'post'>
+							{% csrf_token %}
+							<div class="form-group form-group-lg">
+								<input class="form-control" type="text" id="formGroupInputLarge" placeholder="Put your answer here" name="answer" id="answer">
+								<br>
+								<button type="submit" class="btn btn-primary btn-lg">Submit</button>
+							</div>
+						</form>
+				  </section>
+			  </div>
+		</div>
+		<script>
+		$(function($) {
+		  $("#card").flip(
+		  {
+		  axis: 'y',
+		  trigger: 'manual',
+		  speed : 800,
+			forceWidth:true,
+		  }
+		);
+		});
+		$("#card").click(function() {
+			$("#card").flip(true);
+		});
+		</script>
+		{% else %}
+			<section id="sec">
+				<h2>Level {{ question_no }}</h2>
+				<h3><strong>{{ my_ques.question_text }}</strong></h3>
+				<br>
+				<form action = '/buzz/portal/gordian-knot/ques/{{my_ques.id}}/' class="form-horizontal" method = 'post'>
+					{% csrf_token %}
+					<div class="form-group form-group-lg">
+						<input class="form-control" type="text" id="formGroupInputLarge" placeholder="Put your answer here" name="answer" id="answer">
+						<br>
+						<button type="submit" class="btn btn-primary btn-lg">Submit</button>
+					</div>
+				</form>
+				<br>
+				<br>
+				<br>
+				<p class="level"><strong>For any error in website contact anshul . singhal@students.iiit.ac.in</strong></p>
+			</section>
+		{% endif %}
+
+	</body>
+</html>

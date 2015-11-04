@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+	<head>
+			<meta charset="UTF-8" />
+			<meta http-equiv="X-UA-Compatible" content="IE=edge">
+				<title>Felicity Buzz | Gordian Knot</title>
+				{% load staticfiles %}
+			<script src="https://code.jquery.com/jquery-2.1.4.min.js"> </script>
+			<script src="https://cdn.rawgit.com/nnattawat/flip/v1.0.16/dist/jquery.flip.min.js"> </script>
+			<link rel="stylesheet" type="text/css" href="{% static "gordian_knot/css/normalise.css" %}" />
+			<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"/>
+			<link rel="stylesheet" type="text/css" href="{% static "gordian_knot/css/gordian_knot.css" %}" />
+			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+	</head>
+	<script>
+	function chutiyapa() {
+	    alert("Buddy! You are not eligible for this level!");
+	}
+	</script>
+	<script>
+
+	function openurl(website){
+  		window.location.href = website;
+  }
+	</script>
+	<script type="text/javascript">
+		document.getElementById("myButton").onclick = function () {
+			location.href = "/buzz/portal/gordian-knot/getstarted/";
+		};
+	</script>
+	<body>
+		<div id="head">
+	   <img src="{% static "gordian_knot/img/math.jpg" %}" alt="math" style="width:100%;height:auto;"/>
+
+		</div>
+		<div id="title">
+			<h1>Gordian Knot</h1>
+		</div>
+		<div id="sub-title">
+			{% if user.username %}
+			<h3 >The Project Euler of Felicity<span  style="padding-left:40%"><a class="level" href="https://felicity.iiit.ac.in/buzz/">Home</a></span><span  style="padding-left:10%"><a class="level" href="/buzz/portal/accounts/logout/">Logout</span></h3>
+			{% else %}
+			<h3 class="level">The Project Euler of Felicity</h3>
+			{% endif %}
+			<br>
+			<h4 style="padding-left:35%"></h4>
+		</div>
+		{% if user.username %}
+			{% if check == 1 %}
+					<div class="container">
+							<div class="row">
+								<div class="col-md-2 col-md-offset-3">
+										{% for i in range1 %}
+												{% if user.profile.level >= i %}
+													<a style="font-size:1.8em;" class="level" href="/buzz/portal/gordian-knot/ques/{{i}}">Level {{i}}</a><br>
+												{% else %}
+													<a style="font-size:1.8em;cursor:pointer;" class="level" onclick="chutiyapa()">Level {{i}}</a><br>
+												{% endif %}
+										{% endfor %}
+								</div>
+								<div class="col-md-2 col-md-offset-1">
+									{% for i in range2 %}
+										{% if user.profile.level >= i %}
+											<a style="font-size:1.8em;" class="level" href="/buzz/portal/gordian-knot/ques/{{i}}">Level {{i}}</a><br>
+										{% else %}
+											<a style="font-size:1.8em;cursor:pointer;" class="level" onclick="chutiyapa()">Level {{i}}</a><br>
+										{% endif %}
+									{% endfor %}
+								</div>
+							</div>
+					</div>
+ <!--				<tr style="text-align:center;">
+							<td style="width:35%;" class="first"><a class="level" href="/buzz/portal/gordian-knot/ques/2">Level 2</a></td>
+							<td class="second"><a class="level" href="/buzz/portal/gordian-knot/ques/12">Level 12</a></td>
+						</tr>
+						<tr style="text-align:center;">
+							<td style="width:35%;" class="first"><a class="level" href="/buzz/portal/gordian-knot/ques/3">Level 3</a></td>
+							<td class="second"><a class="level" href="/buzz/portal/gordian-knot/ques/13">Level 13</a></td>
+						</tr>
+						<tr style="text-align:center;">
+							<td style="width:35%;" class="first"><a class="level" href="/buzz/portal/gordian-knot/ques/4">Level 4</a></td>
+							<td class="second"><a class="level" href="/buzz/portal/gordian-knot/ques/14">Level 14</a></td>
+						</tr>
+						<tr style="text-align:center;">
+							<td style="width:35%;" class="first"><a class="level" href="/buzz/portal/gordian-knot/ques/5">Level 5</a></td>
+							<td class="second"><a class="level" href="/buzz/portal/gordian-knot/ques/15">Level 15</a></td>
+						</tr>
+						<tr style="text-align:center;">
+							<td style="width:35%;" class="first"><a class="level" href="/buzz/portal/gordian-knot/ques/6">Level 6</a></td>
+							<td class="second"><a class="level" href="/buzz/portal/gordian-knot/ques/16">Level 16</a></td>
+						</tr>
+						<tr style="text-align:center;">
+							<td style="width:35%;" class="first"><a class="level" href="/buzz/portal/gordian-knot/ques/7">Level 7</a></td>
+							<td class="second"><a class="level" href="/buzz/portal/gordian-knot/ques/17">Level 17</a></td>
+						</tr>
+						<tr style="text-align:center;">
+							<td style="width:35%;" class="first"><a class="level" href="/buzz/portal/gordian-knot/ques/8">Level 8</a></td>
+							<td class="second"><a class="level" href="/buzz/portal/gordian-knot/ques/18">Level 18</a></td>
+						</tr>
+						<tr style="text-align:center;">
+							<td style="width:35%;" class="first"><a class="level" href="/buzz/portal/gordian-knot/ques/9">Level 9</a></td>
+							<td class="second"><a class="level" href="/buzz/portal/gordian-knot/ques/19">Level 19</a></td>
+						</tr>
+						<tr style="text-align:center;">
+							<td style="width:35%;" class="first"><a class="level" href="/buzz/portal/gordian-knot/ques/10">Level 10</a></td>
+							<td class="second"><a class="level" href="/buzz/portal/gordian-knot/ques/20">Level 20</a></td>
+						</tr> -->
+					</table>
+
+			{% else %}
+					<button onclick="location.href = '/buzz/portal/gordian-knot/getstarted/';" type="button" class="btn btn-primary btn-lg">Get Started</button>
+			{% endif %}
+		{% else %}
+			<h2>To Start <a class="level" href="/buzz/portal/accounts/login">Login</a> First </h2>
+		{% endif %}
+		<br><br>
+		<button onclick="location.href = '/buzz/portal/gordian-knot/leaderboard/';" type="button" class="btn btn-primary btn-lg">Go to Leaderboard</button>
+		<br>
+		<br>
+		<br>
+		<p class="level"><strong>For any error in website contact anshul . singhal@students.iiit.ac.in</strong></p>
+
+	</body>
+</html>
