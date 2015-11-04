@@ -10,11 +10,13 @@
 <p class="welcome" style="color:orange;font-size:70px">Question {{question.q_num}}
 </p>
 </div>
+<div class="text-center">
 {% for image in images_list %}
 	<img width="400" height="400" class="img-thumbnail" src = "{{image.url}}" alt = 'no image.'></img>
 	<br>
 	<br>
 {% endfor %}
+</div>
 <form role="form" action = '/buzz/portal/cache-in/ques/{{question.q_num}}/' method = 'post'>
 <div class="form-group">
 {% csrf_token %}

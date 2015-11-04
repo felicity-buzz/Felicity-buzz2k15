@@ -1,6 +1,18 @@
+html
+{
+  height:100%;
+}
 body
 {
+            
+  transition:all 0.3s ease;
   background-image: url("images/10.jpg");
+  font-family: 'Tangerine', serif;
+  font-size: 48px;
+  background-size: auto 100%;
+
+
+
 }
 h2
 {
