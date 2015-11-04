@@ -7,7 +7,7 @@ from django.http import Http404
 from django.contrib import auth
 from django.core.context_processors import csrf
 from django.shortcuts import redirect
-from django.contrib.auth.forms import UserCreationForm
+from .forms import UserCreateForm
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 import json
@@ -43,7 +43,7 @@ def register(request):
 		return HttpResponseRedirect('/')
 	else:
 		if request.method =='POST':
-		    form = UserCreationForm(request.POST)
+		    form = UserCreateForm(request.POST)
 		    if form.is_valid():
 				print form
 				var = form.save()
@@ -55,7 +55,7 @@ def register(request):
 					auth.login(request,user)
 					return HttpResponseRedirect('/buzz/events.html')
 		else:
-		    form = UserCreationForm()
+		    form = UserCreateForm()
 
 		return render_to_response('authentication/register.html', {
 		    'form': form,
