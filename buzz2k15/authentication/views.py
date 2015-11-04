@@ -14,7 +14,7 @@ import json
 
 def login(request):
 	if request.user.username:
-		return HttpResponseRedirect('/')
+		return HttpResponseRedirect('/buzz/events.html')
 	else:
 		if request.method == 'POST':
 			username=request.POST.get('username','')
@@ -32,7 +32,7 @@ def login(request):
 
 def invalid(request):
 	if request.user.username:
-		return HttpResponseRedirect('/')
+		return HttpResponseRedirect('/buzz/events.html')
 	else:
 		c={}
 		c.update(csrf(request))
@@ -40,7 +40,7 @@ def invalid(request):
 
 def register(request):
 	if request.user.username:
-		return HttpResponseRedirect('/')
+		return HttpResponseRedirect('/buzz/events.html')
 	else:
 		if request.method =='POST':
 		    form = UserCreateForm(request.POST)

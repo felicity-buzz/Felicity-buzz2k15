@@ -63,6 +63,15 @@
 										{% endif %}
 									{% endfor %}
 								</div>
+								<div class="col-md-2 col-md-offset-1">
+									{% for i in range3 %}
+										{% if user.profile.level >= i %}
+											<a style="font-size:1.8em;" class="level" href="/buzz/portal/cache-in/ques/{{i}}">Level {{i}}</a><br>
+										{% else %}
+											<a style="font-size:1.8em;cursor:pointer;" class="level" onclick="chutiyapa()">Level {{i}}</a><br>
+										{% endif %}
+									{% endfor %}
+								</div>
 							</div>
 					</div>
 

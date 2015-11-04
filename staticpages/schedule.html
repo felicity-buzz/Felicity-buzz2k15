@@ -1,193 +1,314 @@
 <!doctype html>
-<html><!--<![endif]-->
+<html lang="en" class="no-js">
 <head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <meta charset="utf-8">
+	<link href='http://fonts.googleapis.com/css?family=Droid+Serif|Open+Sans:400,700' rel='stylesheet' type='text/css'>
 
-  <title>Felicity Buzz | Schedule</title>
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic|Roboto+Condensed:400,300,700">
+	<link href='https://fonts.googleapis.com/css?family=Flamenco' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Raleway:200,400,800' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="css/reset.css"> <!-- CSS reset -->
+	<link rel="stylesheet" href="css/style-schedule.css"> <!-- Resource style -->
+	<link rel="stylesheet" href="css/new.css"> <!-- Resource style -->
+	<script src="js/modernizr.js"></script> <!-- Modernizr -->
 
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-
-
-  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
-  <link rel="apple-touch-icon" href="img/apple-touch-icon-precomposed.png">
-
-
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
-
-  <link rel="stylesheet" href="css/schedule.css">
-  <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.3.0/css/font-awesome.min.css" />
-  <link rel="stylesheet" type="text/css" href="fonts/vicons/vicons-font.css" />
-  <script src="js/lib/jquery.min.js"></script>
-  <script src='js/jquery.transit.js'></script>
+	<title>Felicity Buzz | Schedule</title>
 
 </head>
-<body onload="load()">
-  <div style="height: 0; width: 0; position: absolute; visibility: hidden;" aria-hidden="true">
-    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" focusable="false">
-      <symbol id="ripply-scott" viewBox="0 0 100 100">
-        <circle id="ripple-shape" cx="1" cy="1" r="1" />
-      </symbol>
-    </svg>
-  </div>
 
+<style type="text/css">
+	@font-face {
+		font-family: 'Flamenco';
+		font-style: normal;
+		font-weight: 400;
+		src: local('Flamenco'), local('Flamenco-Regular'), url(https://fonts.gstatic.com/s/flamenco/v6/eY_UZqPceqmE3GUQnY4AhfesZW2xOQ-xsNqO47m55DA.woff2) format('woff2');
+	}
 
-  <div id="content-wrapper" class="container">
-    <span id="overlay"></span>
+	h1 {
+		font-family: Flamenco, sans-serif;
+		font-size: 6em !important;
+		text-transform: lowercase;
+		text-align: center;
+		margin: 0;
+	}
 
-<!--
-        <section id="start">
-            <div id="intro">
-                <h1 class="title">Felicity Buzz</h1>
-            </div>
-        </section>
-      -->
-      <div class="content">
-        <!-- button component -->
-        <!-- /end button component -->
-      </div>
-      <div class="try">
-       <div class="nbutton">
-          <a href="javascript:removeShow()">Back</a>
-          </div>
-      <table class="cal-table">
-        <thead>
-          <tr>
-            <th class="cal-month-name" colspan="4">November 2015</th>
-          </tr>
-        </thead>
-        <tbody id="tbody">
-          <tr class="days">
-            <td>Mon</td>
-            <td>Tue</td>
-            <td>Wed</td>
-            <td>Thu</td>
-          </tr>
-          <tr class="cal-week">
-            <td id="day1" class="temp" value="2">2</td>
-            <td id="day2" class="temp" value="3">3</td>
-            <td id="day3" class="temp" value="4">4</td>
-            <td id="day4" class="temp" value="5">5</td>
-          </tr>
-         </tbody>
-         </table>
-      <!--  <div id="show" style="bottom:30%;position:absolute">
+</style>
 
-          </div>-->
-         </div>
+<body>
+	<header>
+		<h1>felicity Buzz-15 </h1>
+	</header>
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/TweenMax.min.js"></script>
+	<section id="cd-timeline" class="cd-container">
 
-        <script src="js/ripple-config.js">
-        </script>
+		<div class="cd-timeline-block">
+			<div class="cd-timeline-img cd-movie">
+				<img src="img/cd-icon-location.svg" alt="Movie">
+			</div>
+			<div class="cd-timeline-content">
+				<div class="card panel panel-default box-shadow--8dp" style="border: none; padding: 0">
+					<table class="table table-hover table-striped">
+						<thead>
 
-        <script type="text/javascript">
-          var data=[
-          {
-            date:"1",
-            info:"absd",
-          },
-          ];
+						</thead>
+						<tbody style="top-border: 0">
+							<tr style="border: 0; background: transparent;" >
+								<td style="border: 0">
+									<span class="event" linkpage="http://felicity.iiit.ac.in/buzz/portal/cache-in/" >Cache In</span>
+								</td>
+								<td style="text-align: right; border: 0">
+									10:00 PM
+								</td>
+							</tr>
 
-          function load(){
-            var i,tds = $("td");
-            for(i=0;i<tds.length;i++){
-              var td = tds[i];
-              var j;
-              for(j=0;j<data.length;j++){
-                if(td.innerHTML == data[j]["date"]){
-                  td.className = "has-event";
-                  //td.setAttribute("id",td.innerHTML);
-                  //ripplyScott.init(td.id, 0.75);
-                  td.addEventListener("click", function(){
-                  });
-                }
-              }
-            }
-          }
-          var x;
-          $(".temp").click(function(){
-            var div = $('<div id="show" style="bottom:30%;position:absolute;"></div>');
-            $(".try").append(div);
-            x=parseInt($(this).attr('value'));
-            if(x == 2){
-              a=[];
-              a=["12:00", "13:00", "14:00", "15:00", "16:00", "17:00"];
-            }
-            else if (x == 3){
-              a=[];
-              a=["22:00", "13:00", "14:00", "15:00", "16:00", "17:00"];
-            }
-            else if (x == 4){
-              a=[];
-              a=["23:00", "13:00", "14:00", "15:00", "16:00", "17:00"];
-            }
-            else if (x == 5){
-              a=[];
-              a=["24:00", "13:00", "14:00", "15:00", "16:00", "17:00"];
-            }
+						</tbody>
+					</table>
+				</div>
+				<span class="cd-date"><h2 style="color: white">Wednesday</h2></span>
+			</div>
+		</div>
 
+		<div class="cd-timeline-block">
+			<div class="cd-timeline-img cd-picture">
+				<img src="img/cd-icon-location.svg" alt="Movie">
+			</div>
+			<div class="cd-timeline-content">
+				<div class="card panel panel-default box-shadow--8dp" style="border: none; padding: 0">
+					<table class="table ">
+						<thead>
+						</thead>
+						<tbody style="top-border: 0">
+							<tr style="border: 0; background: transparent">
+								<td style="border: 0">
+									<span class="event" linkpage="http://felicity.iiit.ac.in/buzz/codecraft/public/" >CodeCraft</span>
+								</td>
+								<td style="text-align: right; border: 0">
+									05:30 PM
+								</td>
+							</tr>
+							<br>
+							<tr style="border: 0">
+								<td style="border: 0; background: transparent">
+									<span class="event" linkpage="http://felicity.iiit.ac.in/buzz/gordian-knot/" >Gordian Knot</span>
+								</td>
+								<td style="text-align: right; border: 0">
+									10:00 PM
+								</td>
+								</tr
+							</tbody>
+						</table>
+					</div>
+					<span class="cd-date"><h2 style="color: white">Thursday</h2></span>
+				</div>
+			</div>
+			<div class="cd-timeline-block">
+				<div class="cd-timeline-img cd-location">
+					<img src="img/cd-icon-location.svg" alt="Movie">
+				</div>
+				<div class="cd-timeline-content">
+					<div class="card panel panel-default box-shadow--8dp" style="border: none; padding: 0">
+						<table class="table">
+							<thead>
 
-            $( ".cal-month-name" ).animate({
-              opacity: 0
-            }, 1000);
-            $( ".cal-week,.days" ).children("*").not(this).animate({
-              opacity: 0
-            }, 500);
-            $(this).animate({
-              opacity:1,
-              width:800,
-              height:600,
-              borderTopLeftRadius: 0,
-              borderTopRightRadius: 0,
-              borderBottomLeftRadius: 0,
-              borderBottomRightRadius: 0
-            },1000).css({"position":"absolute","bottom":"0%","left":"20%"}).text("");
-            setTimeout(function(){
-              $("#show").fadeOut('slow', function(){
-                $("#show").load('table.html', function(){
-                  $("#show").fadeIn('slow');
-                  for (var i = 1; i<=6; i++){
-                    var id = "#time" + i;
-                    $(id).html(a[i-1]);
+							</thead>
+							<tbody style="top-border: 0">
+								<tr style="border: 0">
+									<td style="border: 0">
+										<span class="event" linkpage="http://felicity.iiit.ac.in/buzz/events.html" >Futsal</span>
+									</td>
+									<td style="text-align: right; border: 0">
+										05:00 PM
+									</td>
+								</tr>
+								<tr style="border: 0">
+									<td style="border: 0">
+										<span class="event" linkpage="http://felicity.iiit.ac.in/buzz/events.html" >21 Points</span>
+									</td>
+									<td style="text-align: right; border: 0">
+										05:00 PM
+									</td>
+								</tr>
+								<tr style="border: 0">
+									<td style="border: 0">
+										<span class="event" linkpage="http://felicity.iiit.ac.in/buzz/events.html" >Spin the Yarn</span>
+									</td>
+									<td style="text-align: right; border: 0">
+										05:30 PM
+									</td>
+								</tr>
+								<tr style="border: 0">
+									<td style="border: 0">
+										<span class="event" linkpage="http://felicity.iiit.ac.in/buzz/events.html" >Quiz Mate</span>
+									</td>
+									<td style="text-align: right; border: 0">
+										06:00 PM
+									</td>
+								</tr>
+								<tr style="border: 0">
+									<td style="border: 0">
+										<span class="event" linkpage="http://felicity.iiit.ac.in/buzz/events.html" >Zombie Zone</span>
+									</td>
+									<td style="text-align: right; border: 0">
+										08:30 PM
+									</td>
+								</tr>
+								<tr style="border: 0">
+									<td style="border: 0">
+										<span class="event" linkpage="http://felicity.iiit.ac.in/buzz/HackIn/" >Hack In</span>
+									</td>
+									<td style="text-align: right; border: 0">
+										10:00 PM
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<span class="cd-date"><h2 style="color: white">Friday</h2></span>
+				</div>
+			</div>
+			<div class="cd-timeline-block">
+				<div class="cd-timeline-img cd-movie">
+					<img src="img/cd-icon-location.svg" alt="Movie">
+				</div>
+				<div class="cd-timeline-content">
+					<div class="card panel panel-default box-shadow--8dp" style="border: none; padding: 0">
+						<table class="table">
+							<thead>
 
-                  };
-                })
-              })
-            }, 1110);
-            $("#show").animate({
-              opacity:1
-            },1050);
+							</thead>
+							<tbody style="top-border: 0">
+								<tr style="border: 0">
+									<td style="border: 0">
+										<span class="event" linkpage="http://felicity.iiit.ac.in/buzz/events.html" >Antakshiri</span>
+									</td>
+									<td style="text-align: right; border: 0">
+										05:00 PM
+									</td>
+								</tr>
+								<tr style="border: 0">
+									<td style="border: 0">
+										<span class="event" linkpage="http://felicity.iiit.ac.in/buzz/events.html" >Futsal</span>
+									</td>
+									<td style="text-align: right; border: 0">
+										05:00 PM
+									</td>
+								</tr>
+								<tr style="border: 0">
+									<td style="border: 0">
+										<span class="event" linkpage="http://felicity.iiit.ac.in/buzz/events.html" >Train of Tales</span>
+									</td>
+									<td style="text-align: right; border: 0">
+										05:30 PM
+									</td>
+								</tr>
+								<tr style="border: 0">
+									<td style="border: 0">
+										<span class="event" linkpage="http://felicity.iiit.ac.in/buzz/events.html" >Zombie Zone</span>
+									</td>
+									<td style="text-align: right; border: 0">
+										08:30 PM
+									</td>
+								</tr>
+								<tr style="border: 0">
+									<td style="border: 0">
+										<span class="event" linkpage="http://felicity.iiit.ac.in/buzz/events.html" >Movie Quiz</span>
+									</td>
+									<td style="text-align: right; border: 0">
+										08:30 PM
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<span class="cd-date"><h2 style="color: white">Saturday</h2></span>
+				</div>
+			</div>
+			<div class="cd-timeline-block">
+				<div class="cd-timeline-img cd-picture">
+					<img src="img/cd-icon-location.svg" alt="Movie">
+				</div>
+				<div class="cd-timeline-content">
+					<div class="card panel panel-default box-shadow--8dp" style="border: none; padding: 0">
+						<table class="table table-hover table-striped">
+							<thead>
 
-});
-            function removeShow(){
-              $(".temp").click(function(){
-              x=parseInt($(this).attr('value'));
-            });
-              console.log(x);
-              //$("#show").animate({opacity: 0});
-              $("#show").remove()
-              $( ".cal-month-name" ).animate({
-              opacity: 1
-            }, 500);
-               $( ".cal-week,.days" ).children("*").not(this).animate({
-              opacity: 1
-            }, 500);
-               x=x-1
-               var b="#day"+x;
-               console.log(b)
-               x=x+1;
-              $(b).animate({
-                width: 40,
-                height: 40,
-                borderTopLeftRadius: 500,
-                borderTopRightRadius: 500,
-                borderBottomLeftRadius: 500,
-                borderBottomRightRadius: 500
-              }, 500).css({"position":"","bottom":"","left":"" }).text(x);
-            };
+							</thead>
+							<tbody style="top-border: 0">
+								<tr style="border: 0">
+									<td style="border: 0">
+										<span class="event" linkpage="http://felicity.iiit.ac.in/buzz/events.html" >Paint a Face</span>
+									</td>
+									<td style="text-align: right; border: 0">
+										09:00 AM
+									</td>
+								</tr>
+								<tr style="border: 0">
+									<td style="border: 0">
+										<span class="event" linkpage="http://felicity.iiit.ac.in/buzz/events.html" >Art-uino</span>
+									</td>
+									<td style="text-align: right; border: 0">
+										10:30 AM
+									</td>
+								</tr>
+								<tr style="border: 0">
+									<td style="border: 0">
+										<span class="event" linkpage="http://felicity.iiit.ac.in/buzz/events.html" >Open Art</span>
+									</td>
+									<td style="text-align: right; border: 0">
+										10:30 AM
+									</td>
+								</tr>
+								<tr style="border: 0">
+									<td style="border: 0">
+										<span class="event" linkpage="http://felicity.iiit.ac.in/buzz/events.html" >Gully Cricket</span>
+									</td>
+									<td style="text-align: right; border: 0">
+										01:00 PM
+									</td>
+								</tr>
+								<tr style="border: 0">
+									<td style="border: 0">
+										<span class="event" linkpage="http://felicity.iiit.ac.in/buzz/events.html" >Dodge Ball</span>
+									</td>
+									<td style="text-align: right; border: 0">
+										03:00 PM
+									</td>
+								</tr>
+								<tr style="border: 0">
+									<td style="border: 0">
+										<span class="event" linkpage="http://felicity.iiit.ac.in/buzz/events.html" >Zombie Zone</span>
+									</td>
+									<td style="text-align: right; border: 0">
+										08:30 PM
+									</td>
+								</tr>
 
-</script>
-
-</body>
-</html>
+							</tbody>
+						</table>
+					</div>
+					<span class="cd-date"><h2 style="color: white">Sunday</h2></span>
+				</div>
+			</div>
+		</section> <!-- cd-timeline -->
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+		<script src="js/main.js"></script> <!-- Resource jQuery -->
+		<script type="text/javascript">
+			var isTop = true;
+			$(window).scroll(function(){
+				if(isTop == true){
+					isTop = false;
+					$('html, body').animate({
+						scrollTop: $("#cd-timeline").offset().top
+					}, 1200);
+				}
+			});
+			$(".event").click(function(){
+				var linkpage = $(this).attr('linkpage');
+				window.location.href = linkpage;
+			});
+		</script>
+	</body>
+	</html>

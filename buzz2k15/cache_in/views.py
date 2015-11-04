@@ -17,7 +17,7 @@ def index(request):
 		check = 0
 	else:
 		check = 1
-	keys = { 'user':request.user,'check':check,'range1':range(1,11),'range2':range(11,16) }
+	keys = { 'user':request.user,'check':check,'range1':range(1,11),'range2':range(11,21),'range3':range(21,26) }
 	return render(request, 'cache_in/index.html', keys)
 
 @login_required(login_url='/buzz/portal/accounts/login/')

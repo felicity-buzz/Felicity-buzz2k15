@@ -6,7 +6,8 @@ class Question(models.Model):
 	question_image1=models.ImageField(upload_to='cache_in_images')
 	answer=models.CharField(max_length=1000)
 	q_num=models.IntegerField()
-
+	def __unicode__(self):
+		return unicode(self.q_num)
 
 class Profile(models.Model):
 	user=models.OneToOneField(User,related_name='CacheIn_user', unique = True)
@@ -14,7 +15,8 @@ class Profile(models.Model):
 	question_number=models.IntegerField(default=0)
 	time_completed=models.DateTimeField(default=timezone.now)
 	solved = models.CharField(max_length = 300, default = '0,', blank = True)
-
+	def __unicode__(self):
+		return unicode(self.user)
 
 
 
