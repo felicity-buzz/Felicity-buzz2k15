@@ -1,32 +1,5 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>Felicity Buzz | Login</title>
-	{% load staticfiles %}
-<!-- For-Mobile-Apps -->
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-<link rel="stylesheet" href="{% static "authentication/css/style.css" %}" type="text/css" media="all">
-</head>
-<body>
-<div class="container">
-<h1 style="font-size:4em;letter-spacing:5px;font-weight:400;">FELICITY BUZZ '15</h1>
-      <h2 style="color:white;text-align:center;font-weight:400;">LOGIN</h2>
-     <div class="contact-form">
-	 <div class="signin">
-     <form action="/buzz/portal/accounts/login/" method="post">{% csrf_token %}
+<form action="/accounts/login/" method="post">{% csrf_token %}
 	     <input type="text" class="user" value="Enter Your Username" name="username" id="username" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter Your Username';}" />
 		   <input type="password" class="pass" value="Password" name="password" id="password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}" />
        <input type="submit" value="Login" />
-
-     </form>
-     <h4><a href="/buzz/portal/accounts/register/">Register Now!</a></h4>
-	 </div>
-	 </div>
-</div>
-<div class="footer">
-     <p>For any query regarding webiste, contact anshul.singhal@students.iiit.ac.in</p>
-</div>
-</body>
-</html>
+</form>
